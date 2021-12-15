@@ -22,7 +22,7 @@ Puppet::Type.newtype(:archive) do
     defaultto(:present)
 
     # The following changes allows us to notify if the resource is being replaced
-    def is_to_s(value) # rubocop:disable Style/PredicateName
+    def is_to_s(value) # rubocop:disable Naming/PredicateName
       return "(#{resource[:checksum_type]})#{provider.archive_checksum}" if provider.archive_checksum
 
       super
